@@ -19,14 +19,33 @@
             <a id="contact-button" href="#" role="button">Contact Us</a>
         </div>
         <form id="pizza-form" action="#" method="get">
+            <!-- Contact Info -->
             <fieldset>
                 <legend>Contact Info</legend>
                 <label for="fname">First Name</label>
                 <input type="text" name="fname" id="fname">
                 <label for="lname">Last Name</label>
                 <input type="text" name="lname" id="lname">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+                
             </fieldset>
+            <!-- Delivery or Pickup -->
+            <fieldset>
+                <legend>SELECT PICKUP OR DELIVERY</legend>
+                <label for="pickup">
+                    <input type="radio" id="pickup" name="method" value="pickup">
+                    Pickup
+                </label>
+                <label for="delivery">
+                    <input type="radio" id="delivery" name="method" value="delivery">
+                    Delivery
+                </label>
+            </fieldset>
+            <!-- Order button -->
+            <button type="submit" id="order_button">Place Order</button>
         </form>
+
        
     </div>
 </body>

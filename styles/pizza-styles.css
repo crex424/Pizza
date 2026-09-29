@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: darkred;
     margin: 0;
@@ -24,7 +28,8 @@ body {
 }
 
 #header img {
-    margin: auto;
+    float: right;
+    size: 300px;
 }
 
 #contact-button {
@@ -36,4 +41,16 @@ body {
     color: white;
     text-decoration: none;
     font-size: 1rem;
+}
+
+input[type="text"], input[type="email"] {
+    width: 100%;
+    border: 1px solid darkgreen;
+    border-radius: .25em;
+    margin: 0rem 0rem 1rem 0rem;
+    padding: -75rem;
+}
+
+legend {
+    margin: auto;
 }
