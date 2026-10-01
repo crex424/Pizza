@@ -70,3 +70,6 @@ label {
     display: block;
     padding-bottom: 0.5rem;
 }
+textarea {
+    resize: none;
+}
