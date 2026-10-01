@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: darkred;
+    background-color: lightskyblue;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border:2px, solid, black;
@@ -28,8 +28,9 @@ body {
 }
 
 #header img {
-    float: right;
-    size: 300px;
+    float: top;
+    padding: 0.25rem;
+    
 }
 
 #contact-button {
@@ -43,14 +44,29 @@ body {
     font-size: 1rem;
 }
 
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="email"], select, textarea {
     width: 100%;
-    border: 1px solid darkgreen;
+    border: 2px solid darkgreen;
     border-radius: .25em;
     margin: 0rem 0rem 1rem 0rem;
     padding: -75rem;
 }
 
 legend {
-    margin: auto;
+    color: darkgreen;
+    font-variant:small-caps;
+    font-size: 1.8rem;
+    padding-left: 1rem;
+    width: 100%;
+}
+
+fieldset {
+    border: 2px solid darkgreen;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    padding-bottom: 0.5rem;
 }
