@@ -12,6 +12,9 @@ const PORT = 3000;
 // Enable static file serving
 app.use(express.static('public'));
 
+
+app.set('view engine', 'ejs');
+
 // Create an array to store orders
 const orders = [];
 
@@ -22,22 +25,22 @@ app.use(express.urlencoded({extended: true}));
 // Define a default route ("/")
 app.get('/', (req, res) => {
     //res.send('Welcome to Poppa\'s Pizza');
-    res.sendFile(`${import.meta.dirname}/views/home.html`);
+    res.render('home');
 });
 
 // Add a contact route to display a contact view page
 app.get('/contact-us', (req, res) => {
-    res.sendFile(`${import.meta.dirname}/views/contact.html`)
+    res.render('contact')
 });
 
 // Add a confirm route to display a confirm view page
 app.get('/confirm-order', (req, res) => {
-    res.sendFile(`${import.meta.dirname}/views/confirm.html`)
+    res.render('confirm')
 });
 
 // Add a confirm route to display a confirm view page
 app.get('/menu', (req, res) => {
-    res.sendFile(`${import.meta.dirname}/views/menu.html`)
+    res.render('menu')
 });
 
 // Add a route to process a pizza order
@@ -54,7 +57,7 @@ app.post('/submit-order', (req, res) =>{
     console.log(orders);
 
     // Display the confirmation page
-    res.sendFile(`${import.meta.dirname}/views/confirm.html`)
+    res.render('confirm')
 });
 
 // Add a admin route
