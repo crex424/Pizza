@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/crex424/Pizza#readme",
   "dependencies": {
+    "dotenv": "^18.0.10",
     "ejs": "^7.0.2",
     "express": "^5.2.1",
     "mysql2": "^3.24.6"
