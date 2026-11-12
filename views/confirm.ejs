@@ -7,21 +7,23 @@
 </head>
 <body>
      <main>
-        <header>
+        <!-- <header>
             <img src="images/pizza-guy.jpg" alt="Poppa">
             <h1>Papa's Pizza</h1>
             <p id="tagline">The best pizza GRC students have ever tasted!</p>
             <hr>
             <p>Poppa’s Pizza serves up fresh, handcrafted pizzas with 
                 bold flavors and a warm, family-friendly vibe.</p>
-        </header>
+        </header> -->
         <h1>Thank you for your order, <%= order.fname %>!</h1>
         <h2>Order Summary</h2>
+        <p>ID: <%= order.id %></p>
         <p>Name: <%= order.fname %> <%= order.lname %></p>
         <p>Email: <%= order.email %></p>
         <p>Toppings: <%= order.toppings %></p>
         <p>Size: <%= order.size %></p>
         <p>Comment: <%= order.comment %></p>
+        <p>Timestamp <%= order.timestamp %></p>
     <main>
 </body>
 </html>
