@@ -3,64 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Papa's Pizza</title>
+    <title>Admin Page</title>
 
-    <!-- Link to JavaScript -->
-    <script src="js/pizza.js" defer></script>
+    <!-- Add data table resources -->
     <script src="//code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="//cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/3.1.4/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/4.1.1/js/dataTables.responsive.min.js"></script>
 
-    <script defer>
-        let table = new DataTable('#order-table');
-    </script>
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/pizza-icon.jpg">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="//cdn.datatables.net/2.3.4/css/dataTables.dataTables.min.css">
-    <link rel="stylesheet" href="styles/pizza-styles.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/3.1.4/css/dataTables.dataTables.min.css">
+    <link href="https://cdn.datatables.net/responsive/4.1.1/css/responsive.dataTables.min.css" rel="stylesheet">
+ 
 </head>
 <body>
-    <main>
-        <header>
-            <img src="images/pizza-guy.jpg" alt="Poppa">
-            <h1>Papa's Pizza</h1>
-            <p id="tagline">The best pizza GRC students have ever tasted!</p>
-            <hr>
-            <p>Poppa’s Pizza serves up fresh, handcrafted pizzas with 
-                bold flavors and a warm, family-friendly vibe.</p>
-        </header>
-        <h1>Admin Page</h1>
-        <table id="order-table" class="display">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Toppings</th>
-                    <th>Size</th>
-                    <th>Comment</th>
-                    <th>Date/Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% orders.forEach(orders => { %>
+    <h1>Orders</h1>
 
-                <tr>
-                    <td><%= orders.fname %> <%= orders.lname %></td>
-                    <td><%= orders.email %></td>
-                    <td><%= orders.toppings %></td>
-                    <td><%= orders.size %></td>
-                    <td><%= orders.comment %></td>
-                    <!-- <td><%= orders.timestamp %></td> -->
-                </tr>
+    <table id="order-table" class="display">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Toppings</th>
+            <th>Size</th>
+            <th>Method</th>
+            <th>Comment</th>
+            <th>Date/Time</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% orders.forEach(order => { %>
+        <tr>
+            <td><%= order.fname %> <%= order.lname %></td>
+            <td><%= order.email %></td>
+            <td><%= order.toppings %></td>
+            <td><%= order.size %></td>
+            <td><%= order.method %></td>
+            <td><%= order.comment %></td>
+            <td><%= order.timestamp.toLocaleString() %></td>
+        </tr>
+    <% }); %>
+    </tbody>
+    </table>
 
-                <% }); %>
-
-            </tbody>
-        </table>
-    <main>
-
-
+    <script>
+        new DataTable('#order-table', {
+            responsive: true
+        });
+    </script>
 </body>
 </html>
