@@ -103,12 +103,13 @@ app.get('/admin', async(req, res) => {
     try {
         const orders = await pool.query('SELECT * FROM orders');
         console.log(orders[0]);
+        res.render('admin', { orders:orders[0] });
+
     } catch (err){
         console.error('Database error: ', err);
         res.status(500).send('Database error occurred.');
     }
-    res.render('admin', { orders:orders[0]});
-});
+})
 
 // Start the server on the designated port
 app.listen(PORT, () => {
